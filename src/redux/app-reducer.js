@@ -1,3 +1,5 @@
+import {v4} from 'node-uuid'
+
 const ADD_NEW_TODO = 'TODO_LIST/ADD_NEW_TODO'
 const DEL_TODO = 'TODO_LIST/DEL_TODO'
 const TOGGLE_SUCCESS = 'TODO_LIST/TOGGLE_SUCCESS'
@@ -14,7 +16,7 @@ const appReducer = (state = initialState, action) => {
     case ADD_NEW_TODO: {
 
       const newTodo = {
-        id: state.todos.length,
+        id: v4(),
         title: action.title,
         complete: false
       }
