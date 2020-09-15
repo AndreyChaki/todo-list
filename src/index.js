@@ -4,7 +4,18 @@ import './index.scss'
 import App from './App'
 import * as serviceWorker from './serviceWorker'
 import {Provider} from "react-redux"
-import store from "./redux/redux-store"
+import { loadState, saveState } from "./localStorage"
+import {reducers} from "./redux/redux-store"
+import {createStore} from "redux";
+
+const persistedState = loadState()
+
+const store = createStore(reducers, persistedState)
+
+store.subscribe(() => {
+  saveState(store.getState())
+});
+
 
 ReactDOM.render(
   <React.StrictMode>
