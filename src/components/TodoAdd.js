@@ -13,9 +13,13 @@ const TodoAdd = ({todos, handleAddTodo}) => {
   return (
     <footer>
       <form onSubmit={addTodo} className='add-todo-form'>
-        <input placeholder='Добавить' onChange={e => setTodoText(e.target.value)} value={todoText}
-               className='add-todo-input' type="text"/>
-        <button className='btn btn-primary'/>
+        <label>
+          <span>Добавить</span>
+          <input placeholder='Добавить' onChange={e => setTodoText(e.target.value)} value={todoText}
+                 className='add-todo-input' type="text"/>
+        </label>
+
+        <button className='btn btn-primary'><span>Добавить</span></button>
       </form>
     </footer>
   )

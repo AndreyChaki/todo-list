@@ -55,6 +55,17 @@ main {
   grid-gap: 5px;
   box-sizing: border-box;
   align-items: center;
+
+  label
+  {
+    position: relative;
+
+    span
+    {
+      position: absolute;
+      left: -9999px;
+    }
+  }
 }
 
 .add-todo-input {
@@ -124,7 +135,15 @@ main {
   box-sizing: border-box;
   position: relative;
   border-radius: 5px;
+  overflow: hidden;
   cursor: pointer;
+
+  span
+  {
+    color: #000000;
+    position: absolute;
+    left: -9999px;
+  }
 
   &-primary {
     color: #fff;
